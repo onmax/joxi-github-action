@@ -1,0 +1,36 @@
+name: Joxi
+
+# Controls when the workflow will run
+
+#on: # Remove the first '#' in this line and select one or both options below removing the comments in line 7-8 or/and 11
+  # Run automatically every day at 00:07
+  #schedule: # Make sure to uncomment the line below if you uncomment this line
+  #  - cron: "07 */24 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  #workflow_dispatch: # If you want this option, just uncomment this line and nothing else :), you are good
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Use deno
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: vx.x.x
+
+      # Runs a set of commands using the runners shell
+      - name: Main program
+        run: |
+          echo "🤖 Executing joxi..."
+          deno run --allow-net=ob.nordigen.com/,api.notion.com,api.coinbase.com --allow-env https://deno.land/x/joxi@v0.0.2/src/main.ts
+        env:
+          NORDIGEN_KEY: ${{ secrets.NORDIGEN_KEY }}
+          NORDIGEN_SECRET: ${{ secrets.NORDIGEN_SECRET }}
+          COINBASE_KEY: ${{ secrets.COINBASE_KEY }}
+          COINBASE_SECRET: ${{ secrets.COINBASE_SECRET }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_MAIN_PAGE_ID: ${{ secrets.NOTION_MAIN_PAGE_ID }}
