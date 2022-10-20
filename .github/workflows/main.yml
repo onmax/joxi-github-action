@@ -26,7 +26,7 @@ jobs:
       - name: Main program
         run: |
           echo "🤖 Executing joxi..."
-          deno run --allow-net=ob.nordigen.com/,api.notion.com,api.coinbase.com --allow-env https://deno.land/x/joxi@v0.0.2/src/main.ts
+          deno run --allow-net=ob.nordigen.com/,api.notion.com,api.coinbase.com --allow-env https://deno.land/x/joxi@v0.0.3/src/main.ts
         env:
           NORDIGEN_KEY: ${{ secrets.NORDIGEN_KEY }}
           NORDIGEN_SECRET: ${{ secrets.NORDIGEN_SECRET }}
