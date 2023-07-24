@@ -28,8 +28,8 @@ jobs:
           echo "🤖 Executing joxi..."
           deno run --allow-net=ob.nordigen.com/,api.notion.com,api.coinbase.com --allow-env https://deno.land/x/joxi/src/main.ts
         env:
-          NORDIGEN_KEY: ${{ secrets.NORDIGEN_KEY }}
-          NORDIGEN_SECRET: ${{ secrets.NORDIGEN_SECRET }}
+          NORDIGEN_KEY: ${{ b9da8813-d792-4b6b-8d38-366e2b204e44 }}
+          NORDIGEN_SECRET: ${{ 62c4a67078bfb07c39433227ed3a3971fd5ca5496c6f2325b27b1abbcc0c4afec9697d682824b0349315b112697ce802f771d9cd75a25625542f7b82d4fab756 }}
           COINBASE_KEY: ${{ secrets.COINBASE_KEY }}
           COINBASE_SECRET: ${{ secrets.COINBASE_SECRET }}
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
